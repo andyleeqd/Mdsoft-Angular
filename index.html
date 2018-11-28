@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mdsoft">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="src/images/favicon.ico">
+    <title>Mdsoft</title>
+    <!-- Style CSS================================================================================ -->
+    <link href="src/css/animate.min.css" rel="stylesheet">
+    <link href="src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="src/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="src/css/font-awesome.min.css" rel="stylesheet">
+    <link href="src/css/styles.css" rel="stylesheet">
+    <link href="src/css/main.css" rel="stylesheet">
+    <link href="src/css/animation.min.css" rel="stylesheet">
+    <!-- ====================fancySelect ============================ -->
+    <link href="src/js/fancySelect/css/fancySelect.css" rel="stylesheet">
+    <!-- ====================fancySelect ============================ -->
+    <link href="src/css/angular-progress-button-styles.min.css" rel="stylesheet">
+    <!-- ===========================Form validation ============================================== -->
+    <link rel="stylesheet" href="src/js/formvalidation/css/formValidation.min.css">
+    <!-- ===========================Form validation ============================================== -->
+    <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+    <link rel="stylesheet" href="src/css/jquery.fileupload.css">
+    <!-- =========================== MD Menu ===================================================== -->
+    <link rel="stylesheet" href="src/js/mdmenu/mdmenu.css">
+    <!-- =========================== MD Menu ===================================================== -->
+    <script src="src/js/jquery/jquery-1.11.2.min.js"></script>
+</head>
+
+<body id='page-top' class="loading1">
+    <!--<div class="bubblingG showLoading">
+        <div class="bubblingGMain">
+            <span id="bubblingG_1">
+         </span>
+            <span id="bubblingG_2">
+         </span>
+            <span id="bubblingG_3">
+         </span>
+            <h3>Loading</h3>
+        </div>
+    </div>
+    -->
+    <nav class="mdmenu clearfix" id="allMenu">
+        <ul class="mobile-sub mdmenu-list clearfix">
+            <li class="top-menu"><img src="src/images/logo.svg" class="logo" width="106" alt="Mdsoft"><span class="closeMenu"></span></li>
+            <nav-directive></nav-directive>
+        </ul>
+    </nav>
+    <div id="page" class="clearfix">
+        <div class="header-top" ng-controller="homeCtrl">
+            <div class="container-lg">
+                <div class="container-jobs" ng-repeat="job in jobs">
+                    <div class="container-jobs-box">
+                        <div class="container-jobs-text">
+                            <h3>{{job.title}}</h3>
+                            <span class="jobs affichNext">Jobs – {{job.listeJobs.length}}<span class="hidden-xs"> new </span>!</span>
+                            <ul>
+                                <li ng-repeat="liste in job.listeJobs"><a ng-href="#{{liste.lien}}/{{liste.id}}">{{liste.label}}</a></li>
+                            </ul>
+                        </div>
+                        <div class="container-jobs-bottom" jobs-directive>
+                            <span class="btn-control"><img src="src/images/icons/flame.svg" width="24" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" /></span>
+                            <span class="jobs">Jobs – {{job.listeJobs.length}}<span class="hidden-xs"> new </span>!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header id="header" class="header" sticky>
+            <div class="container">
+                <div class="top-header">
+                    <div class="MobileNavToggle visible-xs visible-sm">
+                        <a id="wsnavtoggle" class="animated-arrow"><span></span></a>
+                    </div>
+                    <div class="logo">
+                        <a href="#page-top" class="scrollTo">
+                            <img src="src/images/logo.svg" width="126" alt="Mdsoft" />
+                        </a>
+                    </div>
+                    <div class="allMenu hidden-xs hidden-sm" home-directive>
+                        <ul class="nav ul">
+                            <nav-directive></nav-directive>
+                        </ul>
+                        <div class="Menu2">
+                            <svg version="1.1" id="menulogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="36px" viewBox="0 0 40 36" enable-background="new 0 0 40 40" xml:space="preserve">
+                                <rect class="rect1" fill="#cacbcd" width="27" height="2" />
+                                <rect class="rect2" x="0" y="8" fill="#cacbcd" width="27" height="2" />
+                                <rect class="rect3" x="0" y="16" fill="#cacbcd" width="27" height="2" />
+                            </svg>
+                            <div class="Menu">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- /header-container -->
+        <div id="main-content">
+            <ui-view></ui-view>
+        </div>
+        <!-- /main-content -->
+        <!-- md-footer -->
+        <footer class="md-s md-footer clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="footer-container">
+                            <footer-directive></footer-directive>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- md-footer -->
+        <!-- Block Back Top -->
+        <div class="back-top" style="display: block;">
+            <back-top></back-top>
+            <a class="back-top-button" href="#page-top" du-smooth-scroll></a>
+        </div>
+        <!-- /Block Back Top -->
+    </div>
+    <!-- /page -->
+    <!-- JavaScript ============================================================================= -->
+    <!-- ====================wow ======================= -->
+    <script src="src/js/angular.min.js"></script>
+    <script src="src/js/angular-route.js"></script>
+    <script src="src/js/angular-ui-router.js"></script>
+    <script src="src/js/angular-sanitize.js"></script>
+    <script type="text/javascript" src="src/js/wow/wow.min.js"></script>
+    <script src="src/js/carousel.js"></script>
+    <script src="src/js/sticky.js"></script>
+    <script src="app.js"></script>
+    <script src='controllers/ctrlHome.js'></script>
+    <script src='controllers/ctrlPageInt.js'></script>
+    <script src="routes/route.js"></script>
+    <script src="directives/directive.js"></script>
+    <script src="directives/mainjsDirective.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+    <script src="src/js/angular-progress-button-styles.min.js"></script>
+    <script src="src/js/ui-bootstrap-tpls.min.js"></script>
+    <script src="src/js/jquery.transit.min.js"></script>
+    <script src="src/js/angular-scroll.min.js"></script>
+    <script src="src/js/ngParallax.min.js"></script>
+    <!-- ====================fancySelect ============================ -->
+    <script src="src/js/fancySelect/js/fancySelect.js"></script>
+    <!-- ====================fancySelect ============================ -->
+</body>
+
+</html>

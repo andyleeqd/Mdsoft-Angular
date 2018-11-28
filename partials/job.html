@@ -1,0 +1,64 @@
+<!-- Block page-title -->
+<section class="md-s md-page-title clearfix" id="slide-3">
+    <div class="bcg"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-title">
+                    <div class="content" data-bottom-top="transform: translate3d(0,65%,0)" data-top-bottom="transform: translate3d(0,0,0))" ng-bind-html="pageTitle">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Block page-title -->
+<!-- Block md-job-details -->
+<section class="md-s md-job-details clearfix">
+    <div class="carousel-top">
+        <ol class="carousel-fleche">
+            <!-- Pagination -->
+            <li>
+                <a ng-click="nextStory()" class="nextJob"></a>
+            </li>
+            <li>
+                <a ng-click="previousStory()" class="prevJob"></a>
+            </li>
+        </ol>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="job-details-1">
+                    <div class="row">
+                        <div class="col-sm-8 col-xs-12">
+                            <h2>{{actualJob.title}}</h2>
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="social">
+                                <h3>Partager :</h3>
+                                <a href="" title="linkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                <a href="" title="Facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                                <a href="" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-repeat="textSect in actualJob.textSection">
+                    <h3>{{textSect.title}}</h3>
+                    <div ng-bind-html="textSect.text"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="job-details-bottom">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="#/recrutement" class="btn btn-red">Postuler</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Block md-job-details -->

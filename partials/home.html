@@ -1,0 +1,167 @@
+<!-- Block Home Slider -->
+<div class="md-s md-slider clearfix" id='main'>
+    <div id="carousel-slider" class="home-slider">
+        <article class="entry-item" ng-repeat="slide in slideData">
+            <div class="entry-thumb">
+                <div class="image"></div>
+                <div class="mask"></div>
+            </div>
+            <div class="entry-content carousel-caption">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="content" data-bottom-top="transform: translate3d(0,65%,0)" data-top-bottom="transform: translate3d(0,0,0))">
+                                <div class="title wow fadeInDown" data-wow-duration="0.30s">
+                                    <h1 ng-bind-html="slide.title"></h1>
+                                </div>
+                                <div class="title2 wow fadeIn" data-wow-duration="0.70s">
+                                    <h2 ng-bind-html="slide.text"></h2>
+                                    <slide-directive></slide-directive>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <div class="scroll-down">
+        <a href="#aboutUs" class="scroll-down-link scrollTo" du-smooth-scroll offset="60">
+            <span class="fa ca3-scroll-down-link fa-chevron-down" aria-hidden="true"></span>
+        </a>
+        <span>Scroll</span>
+    </div>
+</div>
+<!-- Block Home Slider -->
+<!-- Block md-about-us -->
+<section class="md-s md-about-us clearfix" id="aboutUs">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" wow fadeInUp" data-wow-duration="0.95s" ng-repeat="about in aboutUs">
+                    <h2 ng-bind-html="about.title"></h2>
+                    <p ng-bind-html="about.text"></p>
+                    <a href="#contact" class="btn btn-primary scrollTo" du-smooth-scroll><span>Contact us</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Block md-about-us -->
+<!-- Block md-services -->
+<section class="md-s md-services clearfix" id="services">
+    <div class="bcg">
+        <div class="container" ng-repeat="service in services">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="services-title" data-bottom-top="transform: translate3d(0,45%,0)" data-top-bottom="transform: translate3d(0,-45%,0))" ng-bind-html="service.title">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-xs-12" data-bottom-top="transform: translate3d(0,45%,0)" data-top-bottom="transform: translate3d(0,-45%,0))" ng-repeat="listeS in service.listeServices">
+                    <div class="services-text" style="transition-delay: {{listeS.timeApp}};">
+                        <span class="ic1"></span>
+                        <h3>{{listeS.sousTitre}}</h3>
+                        <div ng-bind-html="listeS.text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Block md-services -->
+<!-- Block md-portfolio -->
+<section class="md-s md-portfolio clearfix" id="portfolio">
+    <!--  <div class="carousel-top">
+        <ol class="carousel-fleche">
+            <li class="nextSlide" ng-click="next()"> </li>
+            <li class="prevSlide"></li>
+        </ol>
+    </div> 
+    -->
+    <!--  <ol class="carousel-indicators">
+        <li data-target="#carousel-slider2" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-slider2" data-slide-to="1"></li>
+        <li data-target="#carousel-slider2" data-slide-to="2"></li>
+        <li data-target="#carousel-slider2" data-slide-to="3"></li>
+        <li data-target="#carousel-slider2" data-slide-to="4"></li>
+        <li data-target="#carousel-slider2" data-slide-to="5"></li>
+        <li data-target="#carousel-slider2" data-slide-to="6"></li>
+    </ol> 
+    -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="portfolio-title">
+                    <div ng-bind-html="titleportfolio"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="carousel-slider2" class="carousel slide home-slider" data-ride="carousel" portfolio-directive>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div id="slides_control">
+                <carousel>
+                    <slide ng-repeat="slide in portfolio" active="slide.active" class="item slide1">
+                        <article class="entry-item">
+                            <div class="entry-content carousel-caption">
+                                <div class="container">
+                                    <div class="content" ng-repeat="image in slide.img">
+                                        <div class="row">
+                                            <div class="col-md-7 col-sm-8 col-xs-8 hidden-xs">
+                                                <div class="image" data-animation="animated {{image.classAnim}}" data-wow-duration="0.1s">
+                                                    <img ng-src="src/images/portfolio/{{image.label}}" style="margin:auto;" class="img-responsive">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="title in slide.title">
+                                                <div class="title" data-animation="animated {{title.classAnim}}" data-wow-duration="0.1s">
+                                                    <h2 ng-bind-html="title.label"></h2>
+                                                    <img ng-src="src/images/portfolio/{{image.label}}" alt="" class="img-responsive visible-xs img-mobile">
+                                                    <p ng-bind-html="slide.subtitle"></p>
+                                                </div>
+                                                <div class="desc clearfix" data-wow-duration="0.1s">
+                                                    <p ng-bind-html="slide.desc"></p>
+                                                </div>
+                                                <div class="btns" data-animation="animated {{slide.btnsContainer.classAnim}}" data-wow-duration="0.1s">
+                                                    <a target="_blank" ng-repeat="btn in slide.btnsContainer.btns" href="{{btn.lien}}" class="btn {{btn.class}} btn-info"><span class="icon"></span><span ng-bind-html="btn.label"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </slide>
+                </carousel>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Block md-portfolio -->
+<!-- Block md-clients -->
+<section class="md-s md-clients clearfix" ng-repeat="client in clients">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-bind-html="client.title"></div>
+            </div>
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="clients-logo-block" ng-repeat="logo in client.logos">
+                        <div class="logo-img" style="transition-delay: {{logo.delayAnim}};">
+                            <div class="center">
+                                <div class="v-align">
+                                    <div class="box">
+                                        <img ng-src="src/images/clients/{{logo.src}}" class="img-responsive" alt="{{logo.alt}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Block md-clients -->
+<ng-contact></ng-contact>

@@ -1,0 +1,91 @@
+<!-- Block md-contact -->
+<section class="md-s md-contact clearfix" id="contact">
+    <div class="bcg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12"  >
+                    <div class="contact-title" ng-bind-html="contactTitle"></div>
+                </div>
+                <div class="contact-form">
+                                <form name="userForm" class="form-horizontal" ng-submit="submitForm(userForm.$valid)" novalidate>
+                        <div class="row">
+                            <div class="col-xs-6 clearfix">
+                                <div class="form-group feedback-group">
+                                    <input type="text" name="firstName" class="form-control" required placeholder="First Name *" ng-model="user.firstName">
+                                    <i class="form-control-feedback fv-icon-no-label fa-times fa" ng-show="userForm.firstName.$invalid && !userForm.firstName.$pristine" class="help-block"></i>
+                                    <i class="form-control-feedback fv-icon-no-label fa fa-check" ng-show="userForm.firstName.$valid && userForm.firstName.$dirty" class="help-block"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 clearfix">
+                                <div class="form-group feedback-group">
+                                    <input type="text" name="lastName" class="form-control" required placeholder="Last Name *" ng-model="user.lastName">
+                                    <i class="form-control-feedback fv-icon-no-label fa-times fa" ng-show="userForm.lastName.$invalid && !userForm.lastName.$pristine" class="help-block"></i>
+                                    <i class="form-control-feedback fv-icon-no-label fa fa-check" ng-show="userForm.lastName.$valid && userForm.lastName.$dirty" class="help-block"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 clearfix">
+                                <div class="form-group feedback-group">
+                                    <input type="email" name="email" class="form-control" required placeholder="Email Address *" ng-model="user.email">
+                                    <i class="form-control-feedback fv-icon-no-label fa-times fa" ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block"></i>
+                                    <i class="form-control-feedback fv-icon-no-label fa fa-check" ng-show="userForm.email.$valid && userForm.email.$dirty" class="help-block"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 clearfix">
+                                <div class="form-group feedback-group">
+                                    <input type="text" name="phone" class="form-control" required placeholder="Phone number *"  ng-model="user.phone" ng-pattern="/^\d{0,9}(\.\d{1,9})?$/">
+                                    <i class="form-control-feedback fv-icon-no-label fa-times fa" ng-show="userForm.phone.$invalid && !userForm.phone.$pristine" class="help-block"></i>
+                                    <i class="form-control-feedback fv-icon-no-label fa fa-check" ng-show="userForm.phone.$valid && userForm.phone.$dirty" class="help-block"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 clearfix">
+                                <div class="form-group feedback-group">
+                                    <input type="text" name="company" class="form-control" placeholder="Company" ng-model="user.company">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 clearfix">
+                                <div class="form-group feedback-group">
+                                    <input type="text" name="subject" class="form-control" required placeholder="Subject *" ng-model="user.subject">
+                                    <i class="form-control-feedback fv-icon-no-label fa-times fa" ng-show="userForm.subject.$invalid && !userForm.subject.$pristine" class="help-block"></i>
+                                    <i class="form-control-feedback fv-icon-no-label fa fa-check" ng-show="userForm.subject.$valid && userForm.subject.$dirty" class="help-block"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2 clearfix">
+                                <div class="form-group  feedback-group textarea-grp">
+                                    <textarea class="form-control" required name="message" placeholder="Message *" ng-model="user.message"></textarea>
+                                     <i class="form-control-feedback fv-icon-no-label fa-times fa" ng-show="userForm.message.$invalid && !userForm.message.$pristine" class="help-block"></i>
+                                    <i class="form-control-feedback fv-icon-no-label fa fa-check" ng-show="userForm.message.$valid && userForm.message.$dirty" class="help-block"></i>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="form-group clearfix">
+                                <div class="col-xs-12  feedback-group">
+                                    <div id="captchaContainer" class="g-recaptcha"></div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <div class="col-xs-12  feedback-group">
+                                    <!-- progress button -->
+                                    <button type="submit" class="progress-button btn btn-red" progress-button="someFunctionThatReturnsPromise()" ng-disabled="userForm.$invalid">Submit</button>
+                                    <!-- /progress-button -->
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                            <!-- <pre>user = {{user | json}}</pre>
+                            <pre>master = {{master | json}}</pre> -->
+                            <div class="clearfix">
+                                <div class="col-xs-12">
+                                    <span class="required">(*) Mandatory fields</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- /Block md-contact -->

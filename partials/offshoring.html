@@ -1,0 +1,55 @@
+<!-- Block page-title -->
+<section class="md-s md-page-title page-form clearfix" id="slide-5">
+    <div class="bcg"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="page-title">
+                    <div class="content" data-bottom-top="transform: translate3d(0,65%,0)" data-top-bottom="transform: translate3d(0,0,0))" ng-bind-html="pageTitle">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Block page-title -->
+<!-- Block md-offshoring -->
+<section class="md-s md-offshoring clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="offshoring-title">
+                    <h2>{{title}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="offshoring-mobile" ng-repeat="descMobile in offshoringMobile">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="offshoring-mobile-img  wow bounceInLeft" data-wow-duration="1s">
+                        <img ng-src="src/images/offshoring/{{descMobile.img}}" class="img-responsive" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-5 col-sm-offset-1">
+                    <div class="offshoring-mobile-text wow bounceInUp" data-wow-duration="2s" ng-bind-html="descMobile.text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offshoring-web" ng-repeat="descWeb in offshoringWeb">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12 pull-right">
+                    <div class="offshoring-web-img wow bounceInRight center" data-wow-duration="2s">
+                        <img ng-src="src/images/offshoring/{{descWeb.img}}" class="img-responsive" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="offshoring-web-text wow fadeInUp center" data-wow-duration="1s" ng-bind-html="descWeb.text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Block md-offshoring -->
+<ng-contact></ng-contact>
